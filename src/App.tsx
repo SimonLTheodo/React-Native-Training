@@ -1,3 +1,5 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navigation/native-stack'
 import * as React from 'react'
@@ -37,14 +39,25 @@ function DetailsScreen({
 }
 
 const Stack = createNativeStackNavigator()
+const Tab = createBottomTabNavigator()
+const Drawer = createDrawerNavigator()
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      {/* <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-      </Stack.Navigator>
+        <Stack.Screen name="Details" component={DetailsScreen} initialParams={{number: '0'}} />
+      </Stack.Navigator> */}
+
+      {/* <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Details" component={DetailsScreen} initialParams={{ number: '0' }} />
+      </Tab.Navigator> */}
+      <Drawer.Navigator>
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Details" component={DetailsScreen} initialParams={{ number: '0' }} />
+      </Drawer.Navigator>
     </NavigationContainer>
   )
 }
