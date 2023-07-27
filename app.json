@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.simonltheodo.RNTraining"
@@ -26,7 +24,8 @@
       "package": "com.simonltheodo.RNTraining"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "extra": {
       "eas": {
@@ -39,6 +38,19 @@
     "updates": {
       "url": "https://u.expo.dev/bccbdf60-b1be-4dc9-92a1-5ccdae6512c9"
     },
-    "owner": "simonl-rn-training"
+    "owner": "simonl-rn-training",
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "asyncRoutes": {
+            "default": "development",
+            "android": false
+          },
+          "origin": "http://localhost:19000"
+        }
+      ]
+    ],
+    "scheme": "simonl-rn-training"
   }
 }
