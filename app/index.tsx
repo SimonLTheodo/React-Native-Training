@@ -1,4 +1,4 @@
-import { Link } from 'expo-router'
+import { Link, Stack } from 'expo-router'
 import { useState } from 'react'
 import { Button, Pressable, SafeAreaView, Text, View } from 'react-native'
 
@@ -6,6 +6,17 @@ export default function HomeScreen() {
   const [counter, setCounter] = useState(0)
   return (
     <View style={{ height: '100%' }}>
+      <Stack.Screen
+        options={{
+          title: 'Home',
+          headerStyle: { backgroundColor: '#f4511e' },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold'
+          }
+          // https://reactnavigation.org/docs/headers#replacing-the-title-with-a-custom-component
+        }}
+      />
       <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 15 }}>
         <Text>Home Screen</Text>
         <Link href="/detail/1" asChild>

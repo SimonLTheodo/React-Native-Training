@@ -1,5 +1,5 @@
-import { Link, useLocalSearchParams } from 'expo-router'
-import { Button, FlatList, SafeAreaView, ScrollView, Text, View } from 'react-native'
+import { Link, Stack, useLocalSearchParams } from 'expo-router'
+import { Button, FlatList, SafeAreaView, Text, View } from 'react-native'
 
 interface ListItemProps {
   id: number
@@ -34,15 +34,26 @@ export default function DetailsScreen() {
     {
       id: 5,
       title: 'list'
+    },
+    {
+      id: 6,
+      title: 'component'
     }
   ]
   return (
     <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Stack.Screen
+        options={{
+          title: `Details ${number}`,
+          headerStyle: { backgroundColor: '#f4511e' },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold'
+          }
+          // https://reactnavigation.org/docs/headers#replacing-the-title-with-a-custom-component
+        }}
+      />
       {/* <ScrollView style={{ flex: 1 }}> */}
-      <Text>Details Screen {number}</Text>
-      <Link href="/" asChild>
-        <Button title="Go back" />
-      </Link>
       <FlatList
         style={{ flex: 1, width: '100%' }}
         data={data}
