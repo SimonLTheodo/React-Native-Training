@@ -53,14 +53,12 @@ export default function DetailsScreen() {
           // https://reactnavigation.org/docs/headers#replacing-the-title-with-a-custom-component
         }}
       />
-      {/* <ScrollView style={{ flex: 1 }}> */}
       <FlatList
         style={{ flex: 1, width: '100%' }}
         data={data}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => <ListItem id={item.id} title={item.title} />}
       />
-      {/* </ScrollView> */}
     </SafeAreaView>
   )
 }
